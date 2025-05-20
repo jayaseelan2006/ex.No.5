@@ -1,6 +1,4 @@
 # Ex05 Image Carousel
-## Date:
-
 ## AIM
 To create a Image Carousel using React 
 
@@ -39,9 +37,111 @@ Use setInterval to call the nextImage() function at regular intervals.
 Clean up the interval when the component unmounts using clearInterval to prevent memory leaks.
 
 ## PROGRAM
+## ImageCarousel.jsx
+```
+import React, { useState, useEffect } from "react";
 
+const images = [
+  "https://i.pinimg.com/736x/35/1e/c0/351ec02d9d70b7d10d0cfb33e665deb9.jpg",
+  "https://i.pinimg.com/736x/04/3a/11/043a11aa3e16fb8f96fb8048c3097e05.jpg",
+  "https://i.pinimg.com/736x/06/24/b6/0624b69f4bde825fc38d5ef64b641e28.jpg",
+  "https://i.pinimg.com/736x/a7/ba/3d/a7ba3d1bffec91d6fc4b946dc2fcf968.jpg"
+];
+
+const ImgCro = () => {
+  const [current, setCurrent] = useState(0);
+
+  const next = () => setCurrent((prev) => (prev + 1) % images.length);
+  const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      next();
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="carousel-container">
+      <button className="nav-button" onClick={prev}>⟵</button>
+      <img src={images[current]} alt={`Slide ${current}`} className="carousel-image" />
+      <button className="nav-button" onClick={next}>⟶</button>
+    </div>
+  );
+};
+
+export default ImgCro;
+```
+
+## index.css
+```
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: bgMove 20s ease infinite;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.carousel-image {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s ease-in-out;
+}
+
+.nav-button {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+```
 
 ## OUTPUT
+![Screenshot 2025-05-20 105141](https://github.com/user-attachments/assets/3a09bee9-1822-468d-8461-18acb3c85076)
+![Screenshot 2025-05-20 105155](https://github.com/user-attachments/assets/fa95f4db-3774-4f9b-8447-c06a0c9c89bd)
+
+
+
 
 
 ## RESULT
