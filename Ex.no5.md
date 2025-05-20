@@ -1,4 +1,5 @@
 # Ex05 Image Carousel
+## DATE:09/05/2025
 ## AIM
 To create a Image Carousel using React 
 
@@ -139,9 +140,7 @@ h1, h2 {
 ## OUTPUT
 
 ![Screenshot 2025-05-20 114811](https://github.com/user-attachments/assets/1fa1842d-7a13-4cb4-8cf2-358ac13d25ae)
-![Uploading Screenshot 2025-05-20 114754.png…]()
-
-
+![Screenshot 2025-05-20 114754](https://github.com/user-attachments/assets/7edbb80a-b80e-4a74-b03a-3e004aa0bfbb)
 
 
 
