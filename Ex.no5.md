@@ -137,8 +137,10 @@ h1, h2 {
 ```
 
 ## OUTPUT
-![Screenshot 2025-05-20 105141](https://github.com/user-attachments/assets/3a09bee9-1822-468d-8461-18acb3c85076)
-![Screenshot 2025-05-20 105155](https://github.com/user-attachments/assets/fa95f4db-3774-4f9b-8447-c06a0c9c89bd)
+
+![Screenshot 2025-05-20 114811](https://github.com/user-attachments/assets/1fa1842d-7a13-4cb4-8cf2-358ac13d25ae)
+![Uploading Screenshot 2025-05-20 114754.png…]()
+
 
 
 
